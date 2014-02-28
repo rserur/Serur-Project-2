@@ -137,7 +137,8 @@ function updatePage() {
 	scrubBar.fractionScrubbed = parseInt(scrubBar.style.left, 10)/hashtagPlot.offsetWidth;
 
 	// scroll Transcript to time in video
-	scrollToTimestamp(nearestStamp(scrubBar.fractionScrubbed));
+	var TransHeight = document.getElementById('sotu-transcript').scrollHeight;
+	document.getElementById('sotu-transcript').scrollTop = TransHeight * scrubFraction;
 }
 
 function dominantHashtagAt(time) {
