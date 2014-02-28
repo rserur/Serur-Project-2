@@ -131,7 +131,12 @@ function updatePage() {
 	recolorNation(dominantHashtag);
 	updateChart();
 
-	scrubBar.fractionScrubbed = SOTUvideo.currentTime
+	// calc how far into video you are
+	var scrubFraction = SOTUvideo.currentTime / SOTUvideo.duration; 
+
+	// set scrub to that fraction of the hashtagPlot width
+	scrubBar.style.left = scrubFraction * hashtagPlot.offsetWidth;
+	scrubBar.fractionScrubbed = parseInt(scrubBar.style.left, 10)/hashtagPlot.offsetWidth;
 }
 
 function dominantHashtagAt(time) {
