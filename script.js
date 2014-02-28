@@ -1,7 +1,6 @@
 var hashtagPlot = document.getElementById('hashtag-plot');
 var scrubBar = document.getElementById('scrub-bar');
 var SOTUvideo = document.getElementById('sotu-video');
-SOTUvideo.muted = true;
 var videoOffset = 306;
 
 // Pull out all the transcript timestamps for use throughout
@@ -41,10 +40,6 @@ function hashtagClick(e) {
 	updateScrubBar(e);
 	updateVideo(e);
 	updateTranscript(e);
-}
-
-hashtagPlot.addEventListener('mouseout', playVideo, false);
-function playVideo(e) {
 	SOTUvideo.play();
 }
 
@@ -130,7 +125,7 @@ function updatePage() {
 	updateChart();
 
 	// calc how far into video you are
-	var scrubFraction = SOTUvideo.currentTime / SOTUvideo.duration; 
+	var scrubFraction = SOTUvideo.currentTime/ SOTUvideo.duration; 
 
 	// set scrub to that fraction of the hashtagPlot width
 	scrubBar.style.left = scrubFraction * hashtagPlot.offsetWidth;
@@ -138,7 +133,7 @@ function updatePage() {
 
 	// scroll Transcript to time in video
 	var TransHeight = document.getElementById('sotu-transcript').scrollHeight;
-	document.getElementById('sotu-transcript').scrollTop = TransHeight * scrubFraction;
+	document.getElementById('sotu-transcript').scrollTop = scrubFraction * TransHeight;
 }
 
 function dominantHashtagAt(time) {
