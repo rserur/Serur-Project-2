@@ -1,6 +1,7 @@
 var hashtagPlot = document.getElementById('hashtag-plot');
 var scrubBar = document.getElementById('scrub-bar');
 var SOTUvideo = document.getElementById('sotu-video');
+SOTUvideo.muted = true;
 var videoOffset = 306;
 
 // Pull out all the transcript timestamps for use throughout
@@ -19,7 +20,7 @@ function extractTimestamps() {
 // Initialize these for loading later, after window.onload
 var nation = null;
 var statePaths = null;
-var stateAbbreviations = null;
+var stateAbbreviations = [];
 
 // Hardcoded colors for each hashtag, grabbed from the twitter site with https://en.wikipedia.org/wiki/DigitalColor_Meter
 var hashtagColors = {
@@ -56,6 +57,7 @@ function updateScrubBar(e) {
 
 	scrubBar.fractionScrubbed = parseInt(scrubBar.style.left, 10)/hashtagPlot.offsetWidth;
 }
+
 
 function updateVideo(e) {
 	SOTUvideo.currentTime = SOTUvideo.duration * scrubBar.fractionScrubbed;
@@ -124,9 +126,12 @@ window.onload = function () {
 // Set up the video so that the chart is updated and the nation recolored every time the time changes
 document.getElementById('sotu-video').addEventListener("timeupdate", updatePage);
 function updatePage() {
+
 	var dominantHashtag = dominantHashtagAt(SOTUvideo.currentTime);
 	recolorNation(dominantHashtag);
 	updateChart();
+
+	scrubBar.fractionScrubbed = SOTUvideo.currentTime
 }
 
 function dominantHashtagAt(time) {
