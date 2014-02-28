@@ -35,9 +35,9 @@ var hashtagColors = {
 ////////////////////////////////////////////////////////////////////////////////
 // Handling the hashtagPlot and scrubBar
 
-// Run hashtagMousemove every time the mouse moves above the hashtagPlot
-hashtagPlot.addEventListener('mousemove', hashtagMousemove, false);
-function hashtagMousemove(e) {
+// Run hashtagClick every time the mouse moves above the hashtagPlot
+hashtagPlot.addEventListener('click', hashtagClick, false);
+function hashtagClick(e) {
 	updateScrubBar(e);
 	updateVideo(e);
 	updateTranscript(e);
@@ -45,7 +45,6 @@ function hashtagMousemove(e) {
 
 hashtagPlot.addEventListener('mouseout', playVideo, false);
 function playVideo(e) {
-	//scrubBar.style.visibility = "hidden";
 	SOTUvideo.play();
 }
 
@@ -57,7 +56,6 @@ function updateScrubBar(e) {
 
 	scrubBar.fractionScrubbed = parseInt(scrubBar.style.left, 10)/hashtagPlot.offsetWidth;
 }
-
 
 function updateVideo(e) {
 	SOTUvideo.currentTime = SOTUvideo.duration * scrubBar.fractionScrubbed;
@@ -137,6 +135,9 @@ function updatePage() {
 	// set scrub to that fraction of the hashtagPlot width
 	scrubBar.style.left = scrubFraction * hashtagPlot.offsetWidth;
 	scrubBar.fractionScrubbed = parseInt(scrubBar.style.left, 10)/hashtagPlot.offsetWidth;
+
+	// scroll Transcript to time in video
+	scrollToTimestamp(nearestStamp(scrubBar.fractionScrubbed));
 }
 
 function dominantHashtagAt(time) {
