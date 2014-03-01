@@ -19,7 +19,7 @@ function extractTimestamps() {
 // Initialize these for loading later, after window.onload
 var nation = null;
 var statePaths = null;
-var stateAbbreviations = [];
+var stateAbbreviations = null;
 
 // Hardcoded colors for each hashtag, grabbed from the twitter site with https://en.wikipedia.org/wiki/DigitalColor_Meter
 var hashtagColors = {
@@ -127,10 +127,10 @@ window.onload = function () {
 // Set up the video so that the chart is updated and the nation recolored every time the time changes
 document.getElementById('sotu-video').addEventListener("timeupdate", updatePage);
 function updatePage() {
-
 	var dominantHashtag = dominantHashtagAt(SOTUvideo.currentTime);
 	recolorNation(dominantHashtag);
 	updateChart();
+<<<<<<< HEAD
 
 	// calc how far into video you are
 	var scrubFraction = SOTUvideo.currentTime/ SOTUvideo.duration; 
@@ -142,6 +142,8 @@ function updatePage() {
 	// scroll Transcript to time in video
 	var TransHeight = document.getElementById('sotu-transcript').scrollHeight;
 	document.getElementById('sotu-transcript').scrollTop = scrubFraction * TransHeight;
+=======
+>>>>>>> parent of ce26f0f... JSON prettified, fixed bug
 }
 
 function dominantHashtagAt(time) {
