@@ -40,6 +40,14 @@ function hashtagClick(e) {
 	updateScrubBar(e);
 	updateVideo(e);
 	updateTranscript(e);
+<<<<<<< HEAD
+=======
+}
+
+hashtagPlot.addEventListener('mouseout', playVideo, false);
+function playVideo(e) {
+	scrubBar.style.visibility = "hidden";
+>>>>>>> parent of 49e4696... Keep scrubBar visible, doesn't sync with video yet
 	SOTUvideo.play();
 }
 
