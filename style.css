@@ -22,17 +22,9 @@ html, body {
 #scrub-bar {
 	position: relative;
 	left: 0;
-	width: 	50px;
+	width: 2px;
 	height: 100%;
-	background-color: rgba(80,165,8,0.25);
-}
-
-
-#inner-scrub {
-	margin: auto;
-	width: 	5px;
-	height: 100%;
-	background-color: rgba(80,165,8,.75);
+	background-color: red;
 }
 
 

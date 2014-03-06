@@ -7,6 +7,37 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "script.js",
+			"settings":
+			{
+				"buffer_size": 11259,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "data/values.json",
+			"settings":
+			{
+				"buffer_size": 1466963,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "SOTU.html",
+			"settings":
+			{
+				"buffer_size": 50602,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -51,10 +82,7 @@
 	},
 	"console":
 	{
-		"height": 125.0,
-		"history":
-		[
-		]
+		"height": 125.0
 	},
 	"distraction_free":
 	{
@@ -67,9 +95,6 @@
 	},
 	"file_history":
 	[
-		"/C/Users/Rachael/Documents/GitHub/Serur-Project-2/data/values.json",
-		"/C/Users/Rachael/Documents/GitHub/Serur-Project-2/SOTU.html",
-		"/C/Users/Rachael/Documents/GitHub/Serur-Project-2/script.js",
 		"/Users/labuser/Library/Application Support/Sublime Text 2/Packages/Pretty JSON/Pretty JSON.sublime-settings"
 	],
 	"find":
@@ -106,13 +131,120 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "script.js",
+					"settings":
+					{
+						"buffer_size": 11259,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7645,
+								7645
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2660.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		},
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 2,
+					"file": "data/values.json",
+					"settings":
+					{
+						"buffer_size": 1466963,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								18,
+								1466963
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 185.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "SOTU.html",
+					"settings":
+					{
+						"buffer_size": 50602,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -144,7 +276,7 @@
 		"cols":
 		[
 			0.0,
-			0.505219066994,
+			0.822733191288,
 			1.0
 		],
 		"rows":
@@ -154,11 +286,6 @@
 		]
 	},
 	"menu_visible": true,
-	"output.find_results":
-	{
-		"height": 0.0
-	},
-	"project": "untitled.sublime-project",
 	"replace":
 	{
 		"height": 0.0
@@ -180,24 +307,10 @@
 		],
 		"width": 0.0
 	},
-	"select_symbol":
-	{
-		"height": 0.0,
-		"selected_items":
-		[
-		],
-		"width": 0.0
-	},
-	"settings":
-	{
-	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 150.0,
-	"status_bar_visible": true,
-	"template_settings":
-	{
-	}
+	"status_bar_visible": true
 }
