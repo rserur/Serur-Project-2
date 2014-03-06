@@ -22,11 +22,17 @@ html, body {
 #scrub-bar {
 	position: relative;
 	left: 0;
-	width: 2px;
+	width: 50px;
 	height: 100%;
-	background-color: red;
+	background-color: rgba(80,165,8,0.25);
 }
 
+#inner-scrub {
+	margin: auto;
+	width: 	5px;
+	height: 100%;
+	background-color: rgba(80,165,8,.75);
+}
 
 #container {
 	width: 1280px;
@@ -70,15 +76,12 @@ nav ol {
 
 nav li {
 	display: inline;
-
-	border-right: 1px #555 solid;
-
 	padding-right: 0.45em;
 	padding-left: 0.1875em;
-
-	text-transform: uppercase;
 	font-family: Courier, serif;
 	font-size: 0.9655em;
+	background: #eee;
+	padding: 6px;
 }
 
 nav li:last-child {
@@ -87,8 +90,13 @@ nav li:last-child {
 
 li a {
 	text-decoration: none; /* Removing the defaul styling of links (i.e. underling) */
+	color: #aaa;
 }
 
+li a:hover {
+	text-decoration: none; /* Removing the defaul styling of links (i.e. underling) */
+	color:#000;
+}
 
 /* Middle Panel */
 
@@ -98,9 +106,7 @@ li a {
 
 #sotu-transcript {
 	font-family: 'Crimson Text', serif;
-
 	overflow-y: auto;
-
 	height: 340px;
 	padding-left: 1em;
 	padding-right: 1em;
@@ -120,7 +126,6 @@ li a {
 #map object {
 	-webkit-transform: scale(0.2875); /* Scaling down the original SVG */
 	-webkit-transform-origin: 0 0; /* Changing where it's scaled from to the origin instead of the center */
-
 	transform: scale(0.2875);
 	transform-origin: 0 0;
 }
@@ -128,17 +133,14 @@ li a {
 #hashtag-chart ol {
 	padding: 0;
 	padding-left: 0.125em;
-
 	margin: 0.25em;
 	margin-top: 1.25em;
-
 	list-style-type: none;
 }
 
 #hashtag-chart li {
 	height: 1em;
 	width: 100%;
-
 	margin: 0;
 	margin-bottom: 0.625em;
 }
@@ -146,12 +148,9 @@ li a {
 #hashtag-chart li .hashtag {
 	float: left;
 	width: 25%;
-
-	text-transform: uppercase;
 	font-family: Courier, serif;
 	font-size: 0.75em;
 	line-height: calc(0.75em * 2.166);
-	
 	-webkit-transition: 250ms linear;
 	transition: 250ms linear;
 }
@@ -159,9 +158,8 @@ li a {
 #hashtag-chart li .bar {
 	height: 1.25em;
 	width: 65%;
-
 	float: right;
-	
 	-webkit-transition: 250ms linear;
 	transition: 250ms linear;
 }
+

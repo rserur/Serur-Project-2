@@ -1,0 +1,46 @@
+<html>
+
+	<head>
+		<script src='https://github.com/downloads/processing-js/processing-js/processing-1.4.1.js'></script>
+		<style>
+			canvas { outline: none; }
+		</style>
+	</head>
+
+	<body>
+		<canvas></canvas>
+	</body>
+
+	<script>
+		var canvas = document.getElementsByTagName('canvas')[0];
+
+		var barHeight = 30;
+		var barSpacing = 10;
+
+		function sketch(p) {
+			function setup() {
+				p.size(300,300); // set our size 
+				// and background color
+				p.frameRate(5);
+			}
+
+			function draw () {
+				p.background(0, 0, 0); 
+				var data = [Math.random()*(100), Math.random()*(150), Math.random()*(200), Math.random()*(250), Math.random()*(200), Math.random()*(150), Math.random()*(100)]; // some arbitrary data
+				p.fill(200,0,0); // change our fill color to a red
+				p.noStroke();
+
+				for (var i = 0; i < data.length; i++ ) {
+					p.rect((barSpacing + barHeight)*i, 0, barHeight, data[i]);
+				}
+			}
+
+			// tell Processing what to use for setup and draw
+			p.setup = setup;
+			p.draw = draw;
+		}
+
+		var p = new Processing(canvas, sketch); // actually attach and run our sketch
+	</script>
+
+</html>

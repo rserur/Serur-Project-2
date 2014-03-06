@@ -125,7 +125,7 @@ function updatePage() {
 	updateChart();
 
 	// calc how far into video you are
-	var scrubFraction = SOTUvideo.currentTime/ SOTUvideo.duration; 
+	var scrubFraction = SOTUvideo.currentTime/SOTUvideo.duration; 
 
 	// set scrub to that fraction of the hashtagPlot width
 	scrubBar.style.left = scrubFraction * hashtagPlot.offsetWidth;
