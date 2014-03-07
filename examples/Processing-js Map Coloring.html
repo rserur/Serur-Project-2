@@ -22,6 +22,7 @@
 				map = p.loadShape('us.svg'); // load the SVG
 				p.size(map.width, map.height); // set our sketch's width and height
 				michigan = map.getChild("MI");
+				florida = map.getChild("FL");
 			}
 
 			function draw () {
@@ -33,6 +34,12 @@
 				p.fill(255, 0, 0);
 				p.shape(michigan, 0, 0);
 				michigan.enableStyle();
+
+				// change Florida's color
+				florida.disableStyle();
+				p.fill(0, 0, 255);
+				p.shape(florida, 0, 0);
+				florida.enableStyle();
 			}
 
 			// tell Processing which functions to use for our setup and draw
