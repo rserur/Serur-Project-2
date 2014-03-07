@@ -343,7 +343,6 @@ function drawBars(dominantHashtag) {
 				p.fill(211, 211, 211); // change our fill color to a red
 				p.noStroke();
 				p.noLoop();
-
 				// rect(x, y, width, height, radius)
 
 				for (var i = 0; i < data.length; i++ ) {
@@ -351,22 +350,39 @@ function drawBars(dominantHashtag) {
 				}
 
 
-				if (dominantHashtag == "education")
+				if (dominantHashtag == "energy")
 				{
-					// TODO: color bar with dominantHashtag based on time
+					p.fill(50, 160, 44);
+					p.rect( 0, (barSpacing + barHeight)*0, data[0], barHeight);
+				}
+				else if (dominantHashtag == "jobs")
+				{
+					p.fill(255, 127, 0);
+					p.rect( 0, (barSpacing + barHeight)*1, data[1], barHeight);
+				}
 
-					// color third bar?
+				else if (dominantHashtag == "education")
+				{
 					p.fill(178, 223, 138);
 					p.rect( 0, (barSpacing + barHeight)*2, data[2], barHeight);
 				}
-
-				else if (dominantHashtag == "jobs")
+				else if (dominantHashtag == "fairness")
 				{
-					// color 2nd bar?
-					p.fill(255, 127, 0);
-					p.rect( 0, (barSpacing + barHeight)*2, data[1], barHeight);
+					p.fill(252, 154, 153);
+					p.rect( 0, (barSpacing + barHeight)*3, data[3], barHeight);
 				
 				}
+				else if (dominantHashtag == "healthcare")
+				{
+					p.fill(227, 25, 27);
+					p.rect( 0, (barSpacing + barHeight)*4, data[4], barHeight);
+				}
+				else if  (dominantHashtag == "defense")
+				{
+					p.fill(30, 120, 180);
+					p.rect( 0, (barSpacing + barHeight)*5, data[5], barHeight);
+				}
+
 			}
 
 			// tell Processing what to use for setup and draw
