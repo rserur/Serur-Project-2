@@ -333,7 +333,7 @@ function drawBars(dominantHashtag) {
 		function sketch(p) {
 			function setup() {
 				p.size(300,300); // set our size 
-				// and background color
+				p.noLoop();
 			}
 
 			function draw () {
@@ -342,7 +342,6 @@ function drawBars(dominantHashtag) {
 				var data = [200,100,120,200,100,200]; // some arbitrary data
 				p.fill(211, 211, 211); // change our fill color to a red
 				p.noStroke();
-				p.noLoop();
 				// rect(x, y, width, height, radius)
 
 				for (var i = 0; i < data.length; i++ ) {
