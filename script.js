@@ -2,6 +2,7 @@ var hashtagPlot = document.getElementById('hashtag-plot');
 var scrubBar = document.getElementById('scrub-bar');
 var SOTUvideo = document.getElementById('sotu-video');
 var videoOffset = 306;
+var canvas = document.getElementsByTagName('canvas')[0];
 
 // Pull out all the transcript timestamps for use throughout
 var transcript = document.getElementById('sotu-transcript');
@@ -134,6 +135,8 @@ function updatePage() {
 	// scroll Transcript to time in video
 	var TransHeight = document.getElementById('sotu-transcript').scrollHeight;
 	document.getElementById('sotu-transcript').scrollTop = scrubFraction * TransHeight;
+
+	drawBars(dominantHashtag);
 }
 
 function dominantHashtagAt(time) {
@@ -319,4 +322,57 @@ function interpolate(value, from, to) {
 	var ratio = toSpread/fromSpread;
 
 	return (value - from[0])*ratio + to[0];
+}
+
+function drawBars(dominantHashtag) {
+		
+
+		var barHeight = 30;
+		var barSpacing = 10;
+
+		function sketch(p) {
+			function setup() {
+				p.size(300,300); // set our size 
+				// and background color
+			}
+
+			function draw () {
+
+				p.background(255, 255, 255); 
+				var data = [200,100,120,200,100,200]; // some arbitrary data
+				p.fill(211, 211, 211); // change our fill color to a red
+				p.noStroke();
+				p.noLoop();
+
+				// rect(x, y, width, height, radius)
+
+				for (var i = 0; i < data.length; i++ ) {
+					p.rect( 0, (barSpacing + barHeight)*i, data[i], barHeight);
+				}
+
+
+				if (dominantHashtag == "education")
+				{
+					// TODO: color bar with dominantHashtag based on time
+
+					// color third bar?
+					p.fill(178, 223, 138);
+					p.rect( 0, (barSpacing + barHeight)*2, data[2], barHeight);
+				}
+
+				else if (dominantHashtag == "jobs")
+				{
+					// color 2nd bar?
+					p.fill(255, 127, 0);
+					p.rect( 0, (barSpacing + barHeight)*2, data[1], barHeight);
+				
+				}
+			}
+
+			// tell Processing what to use for setup and draw
+			p.setup = setup;
+			p.draw = draw;
+		}
+
+		var p = new Processing(canvas, sketch); // actually attach and run our sketch
 }

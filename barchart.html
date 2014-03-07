@@ -16,6 +16,7 @@
 
 		var barHeight = 30;
 		var barSpacing = 10;
+		var dominantHashtag = "jobs";
 
 		function sketch(p) {
 			function setup() {
@@ -36,12 +37,20 @@
 					p.rect( 0, (barSpacing + barHeight)*i, data[i], barHeight);
 				}
 
-				
-				// TODO: color bar with dominantHashtag based on time
 
-				// color third bar?
-				p.fill(178, 223, 138);
-				p.rect( 0, (barSpacing + barHeight)*3, data[3], barHeight);
+				if (dominantHashtag == "education")
+				{
+					// TODO: color bar with dominantHashtag based on time
+
+					// color third bar?
+					p.fill(178, 223, 138);
+					p.rect( 0, (barSpacing + barHeight)*2, data[2], barHeight);
+				}
+				else if (dominantHashtag == "jobs")
+				{	
+					p.fill(255, 127, 0);
+					p.rect( 0, (barSpacing + barHeight)*1, data[1], barHeight);
+				}	
 			}
 
 			// tell Processing what to use for setup and draw
