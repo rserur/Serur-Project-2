@@ -348,7 +348,7 @@ function drawBars(dominantHashtag) {
 					p.rect( 0, (barSpacing + barHeight)*i, data[i], barHeight);
 				}
 
-
+				// color dominant Hashtag only
 				if (dominantHashtag == "energy")
 				{
 					p.fill(50, 160, 44);
